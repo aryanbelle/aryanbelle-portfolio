@@ -29,6 +29,7 @@ import {
   HardDrive,
   Zap,
   Layers,
+  SendIcon,
 } from 'lucide-react';
 import StackIcon from 'tech-stack-icons';
 import FillUpSS from '../assets/fillupioss.png';
@@ -36,6 +37,8 @@ import GMDSS from '../assets/guessmydoodle.png';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import { UIShowcase } from './components/ui-showcase';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -179,7 +182,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-dark text-gray-100">
+    <div className="App bg-background min-h-screen text-gray-100">
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -328,14 +331,14 @@ function App() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <a
                     href="#contact"
-                    className="bg-primary text-white px-6 py-3 rounded-full hover:shadow-neon transition-all duration-300 text-center"
+                    className="bg-primary text-primary-foreground px-6 py-3 rounded-full hover:border-primary transition-all duration-300 text-center"
                   >
                     Get in Touch
                   </a>
                   <a
                     // href="/"
                     // download
-                    className="bg-dark-card text-white flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-gray-700/50 hover:border-primary/50 transition-all duration-300 text-center tracking-wide shadow-md"
+                    className="text-white flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-gray-700/50 hover:border-primary/50 transition-all duration-300 text-center tracking-wide shadow-md"
                     onClick={showResumeMsg}
                   >
                     <Download className="w-5 h-5" />
@@ -353,7 +356,7 @@ function App() {
                       (tech) => (
                         <span
                           key={tech}
-                          className="px-4 py-2 bg-dark-card border border-gray-700/30 rounded-full text-sm font-medium text-gray-300 transition-all duration-300 select-none"
+                          className="px-4 py-2 border border-gray-700/30 rounded-full text-sm font-medium text-gray-300 transition-all duration-300 select-none"
                         >
                           {tech}
                         </span>
@@ -369,9 +372,10 @@ function App() {
                   {/* Floating Code Windows */}
                   <div className="absolute inset-0">
                     {/* Terminal Window */}
-                    <div className="absolute top-4 right-0 w-72 md:w-96 bg-dark-card rounded-lg shadow-xl transform rotate-6 animate-float border border-gray-700/30">
+                    <div className="absolute top-4 right-0 w-72 md:w-96 bg-card rounded-2xl shadow-xl transform rotate-6 animate-float border border-gray-700/30">
                       <div className="flex items-center px-4 py-2 border-b border-gray-800/50">
                         <div className="flex space-x-2">
+
                           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -394,7 +398,7 @@ function App() {
                     </div>
 
                     {/* Code Editor Window */}
-                    <div className="absolute bottom-4 left-0 w-72 md:w-96 bg-dark-card rounded-lg shadow-xl transform -rotate-6 animate-float-delayed border border-gray-700/30">
+                    <div className="absolute bottom-4 left-0 w-72 md:w-96 bg-card rounded-2xl shadow-xl transform -rotate-6 animate-float-delayed border border-gray-700/30">
                       <div className="flex items-center px-4 py-2 border-b border-gray-800/50">
                         <div className="flex space-x-2">
                           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -419,17 +423,17 @@ function App() {
 
                     {/* Floating Icons */}
                     <div className="absolute top-1/4 left-10 animate-spin-slow">
-                      <div className="bg-dark-card/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-gray-700/30">
+                      <div className="bg-secondary backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-gray-700/30">
                         <Terminal className="w-8 h-8 text-primary" />
                       </div>
                     </div>
                     <div className="absolute bottom-2 right-6 animate-bounce-slow">
-                      <div className="bg-dark-card/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-gray-700/30">
+                      <div className="bg-secondary backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-gray-700/30">
                         <Database className="w-8 h-8 text-primary" />
                       </div>
                     </div>
                     <div className="absolute top-1/3 mt-4 left-2/4 animate-pulse">
-                      <div className="bg-dark-card/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-gray-700/30">
+                      <div className="bg-secondary backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-gray-700/30">
                         <Globe className="w-8 h-8 text-primary" />
                       </div>
                     </div>
@@ -468,7 +472,7 @@ function App() {
               {/* Left Side: Summary Section */}
               <div className="space-y-8">
                 {/* Introduction */}
-                <div className="bg-dark-card p-8 rounded-xl border border-gray-800/30 hover:border-primary/50 transition-all duration-300 hover:shadow-neon">
+                <div className="bg-dark-card p-8 rounded-xl border border-gray-800/30 hover:border-primary/50 transition-all duration-300 hover:border-primary">
                   <h3 className="text-2xl font-semibold text-white mb-4 tracking-tight">
                     Who Am I?
                   </h3>
@@ -511,7 +515,7 @@ function App() {
                   ].map((highlight, index) => (
                     <div
                       key={index}
-                      className="bg-dark-card p-6 rounded-xl border border-gray-800/30 hover:border-primary/50 transition-all duration-300 hover:shadow-neon"
+                      className="bg-dark-card p-6 rounded-xl border border-gray-800/30 hover:border-primary/50 transition-all duration-300 hover:border-primary"
                     >
                       <div className="flex items-center gap-4">
                         <div className="p-3 bg-primary/10 rounded-full">
@@ -570,7 +574,7 @@ function App() {
                       {/* Timeline Dot */}
                       <div className="absolute -left-2.5 top-0 w-5 h-5 bg-dark-lighter rounded-full border-2 border-gray-800/30 group-hover:border-primary/50 transition-all duration-300"></div>
                       {/* Content */}
-                      <div className="bg-dark-card p-6 rounded-xl border border-gray-800/30 hover:border-primary/50 transition-all duration-300 hover:shadow-neon">
+                      <div className="bg-dark-card p-6 rounded-xl border border-gray-800/30 hover:border-primary/50 transition-all duration-300 hover:border-primary">
                         <h4 className="text-lg font-bold text-white">
                           {edu.title}
                         </h4>
@@ -633,7 +637,7 @@ function App() {
               ].map((skillCategory, index) => (
                 <div
                   key={index}
-                  className="bg-dark-card p-8 rounded-xl border border-gray-800/30 hover:border-primary/50 transition-all duration-300 hover:shadow-neon group"
+                  className="bg-dark-card p-8 rounded-xl border border-gray-800/30 hover:border-primary transition-all duration-300 group"
                 >
                   <div className="flex flex-col items-center text-center">
                     {/* Icon */}
@@ -711,7 +715,7 @@ function App() {
             {/* Projects Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Project 1 */}
-              <div className="group relative bg-dark-card rounded-xl overflow-hidden border border-gray-800/30 hover:border-primary/50 transition-all duration-500 hover:shadow-neon flex flex-col">
+              <div className="group relative bg-dark-card rounded-xl overflow-hidden border border-gray-800/30 hover:border-primary/50 transition-all duration-500 hover:border-primary flex flex-col">
                 {/* Project Content */}
                 <div className="p-6 flex-1">
                   <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">
@@ -749,7 +753,7 @@ function App() {
               </div>
 
               {/* Project 2 */}
-              <div className="group relative bg-dark-card rounded-xl overflow-hidden border border-gray-800/30 hover:border-primary/50 transition-all duration-500 hover:shadow-neon flex flex-col">
+              <div className="group relative bg-dark-card rounded-xl overflow-hidden border border-gray-800/30 hover:border-primary/50 transition-all duration-500 hover:border-primary flex flex-col">
                 {/* Project Content */}
                 <div className="p-6 flex-1">
                   <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">
@@ -789,7 +793,7 @@ function App() {
               </div>
 
               {/* Project 3 */}
-              <div className="group relative bg-dark-card rounded-xl overflow-hidden border border-gray-800/30 hover:border-primary/50 transition-all duration-500 hover:shadow-neon flex flex-col">
+              <div className="group relative bg-dark-card rounded-xl overflow-hidden border border-gray-800/30 hover:border-primary/50 transition-all duration-500 hover:border-primary flex flex-col">
                 {/* Project Content */}
                 <div className="p-6 flex-1">
                   <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">
@@ -865,7 +869,7 @@ function App() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="mt-1 block w-full px-4 py-2 bg-dark border border-gray-700/50 rounded-lg focus:ring-primary text-white"
+                      className="mt-1 block w-full px-4 py-2 bg-card border border-gray-700/50 rounded-lg text-white"
                       placeholder="Your Name"
                     />
                   </div>
@@ -882,7 +886,7 @@ function App() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="mt-1 block w-full px-4 py-2 bg-dark border border-gray-700/50 rounded-lg focus:ring-primary text-white"
+                      className="mt-1 block w-full px-4 py-2 bg-card border border-gray-700/50 rounded-lg focus:ring-primary text-white"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -899,13 +903,13 @@ function App() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="mt-1 block w-full px-4 py-2 bg-dark border border-gray-700/50 rounded-lg focus:ring-primary text-white"
+                      className="mt-1 block w-full active:border-primary px-4 py-2 bg-card border border-gray-700/50 rounded-lg text-white"
                       placeholder="Your message..."
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-primary-dark text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors hover:shadow-neon"
+                    className="w-[28%] bg-primary text-primary-foreground font-medium rounded-full px-6 py-3 hover:bg-primary-dark transition-colors"
                     disabled={isLoading}
                   >
                     {isLoading ? (
